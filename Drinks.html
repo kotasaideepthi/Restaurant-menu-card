@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drinks Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        .menu-card {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+        }
+        .drink-item {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .drink-image {
+            width: 80px;
+            height: 80px;
+            margin-right: 20px;
+        }
+        .drink-details {
+            flex-grow: 1;
+        }
+        .drink-name {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            margin: 5px 0;
+        }
+        .drink-price {
+            font-size: 16px;
+            color: #777;
+            margin: 5px 0;
+        }
+.order-button {
+            padding: 5px 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .order-button:hover {
+            background-color: #45a049;
+        }
+        #order-list {
+            list-style: none;
+            padding: 0;
+        }
+.next-button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            margin-top: 20px;
+        }
+        .next-button:hover {
+            background-color: #45a049;
+        }
+   
+    </style>
+</head>
+<body>
+
+<div class="menu-card">
+    <h1>Drinks Menu</h1>
+    
+    <div class="drink-item">
+        <img src="https://www.shutterstock.com/image-photo/ankara-turkey-may-17-2014-600nw-193222430.jpg" alt="soda pop" class="drink-image">
+        <div class="drink-details">
+            <div class="drink-name">soda pop</div>
+            <div class="drink-price">$130.50</div>
+<button class="order-button" onclick="addToOrder('soda pop', 130.50)">Order</button>
+        </div>
+    </div>
+
+<div class="drink-item">
+        <img src="https://www.shutterstock.com/image-photo/spicy-jalapeno-lime-margarita-short-260nw-1933243838.jpg" alt="Margarita" class="drink-image">
+        <div class="drink-details">
+            <div class="drink-name">Margarita</div>
+            <div class="drink-price">$190.50</div>
+<button class="order-button" onclick="addToOrder('Margarita', 190.50)">Order</button>
+        </div>
+    </div>
+
+
+<div class="drink-item">
+        <img src="https://media.istockphoto.com/id/1152027868/photo/cosmopolitan-martini-cocktail-isolated.jpg?s=612x612&w=0&k=20&c=xsTnUZ-6y5kFGGot4regTaECRHfGRjBot8CfR14kICU=" alt="Cosmopolitan" class="drink-image">
+        <div class="drink-details">
+            <div class="drink-name">Cosmopolitan</div>
+            <div class="drink-price">$210.50</div>
+<button class="order-button" onclick="addToOrder('Cosmopolitan', 210.50)">Order</button>
+        </div>
+    </div>
+
+    <div class="drink-item">
+        <img src="https://i0.wp.com/thejoyfilledkitchen.com/wp-content/uploads/2021/05/DSC_0067-2.jpg?resize=683%2C1024&ssl=1" alt="Smoothie" class="drink-image">
+        <div class="drink-details">
+            <div class="drink-name">Mixed Berry Smoothie</div>
+            <div class="drink-price">$140.00</div>
+<button class="order-button" onclick="addToOrder('Mixed Berry Smoothie', 140.00)">Order</button>
+        </div>
+    </div>
+
+    <div class="drink-item">
+        <img src="https://thumbs.dreamstime.com/b/lemonade-28180227.jpg" alt="Lemonade" class="drink-image">
+        <div class="drink-details">
+            <div class="drink-name">Fresh Lemonade</div>
+            <div class="drink-price">$120.50</div>
+<button class="order-button" onclick="addToOrder('Fresh Lemonade', 120.50)">Order</button>
+        </div>
+    </div>
+<div class="drink-item">
+        <img src="https://c8.alamy.com/comp/RWBEY1/manhattan-cocktail-on-white-background-RWBEY1.jpg" alt="Manhattan" class="drink-image">
+        <div class="drink-details">
+            <div class="drink-name">Manhattan</div>
+            <div class="drink-price">$250.50</div>
+<button class="order-button" onclick="addToOrder('Manhattan', 250.50)">Order</button>
+        </div>
+    </div>
+<ul id="order-list"></ul>
+
+    <div id="order-summary">
+        <button onclick="calculateTotal()">Done</button>
+        <p>Total Items Ordered: <span id="total-items">0</span></p>
+        <p>Total Cost: $<span id="total-cost">0.00</span></p>
+    </div>
+ <a href="Ice-Creams.html" class="next-button">Next</a>
+</div>
+<script>
+    const orderedItems = [];
+
+    function addToOrder(item, price) {
+        orderedItems.push({ item, price });
+        const orderList = document.getElementById('order-list');
+        const listItem = document.createElement('li');
+        listItem.textContent = `${item} - $${price.toFixed(2)}`;
+        orderList.appendChild(listItem);
+    }
+
+    function calculateTotal() {
+        const totalItemsSpan = document.getElementById('total-items');
+        const totalCostSpan = document.getElementById('total-cost');
+        const totalItems = orderedItems.length;
+        const totalCost = orderedItems.reduce((acc, item) => acc + item.price, 0).toFixed(2);
+        totalItemsSpan.textContent = totalItems;
+        totalCostSpan.textContent = totalCost;
+    }
+</script>
+
+</body>
+</html>
