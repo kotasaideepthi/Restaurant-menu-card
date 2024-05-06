@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starters Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        .menu-card {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+        }
+        .starter-item {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .starter-image {
+            width: 80px;
+            height: 80px;
+            margin-right: 20px;
+        }
+        .starter-details {
+            flex-grow: 1;
+        }
+        .starter-name {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            margin: 5px 0;
+        }
+        .starter-price {
+            font-size: 16px;
+            color: #777;
+            margin: 5px 0;
+        }
+.order-button {
+            padding: 5px 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .order-button:hover {
+            background-color: #45a049;
+        }
+        #order-list {
+            list-style: none;
+            padding: 0;
+        }
+.next-button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            margin-top: 20px;
+        }
+        .next-button:hover {
+            background-color: #45a049;
+        }
+   
+    </style>
+</head>
+<body>
+
+<div class="menu-card">
+    <h1>Starters Menu</h1>
+    
+    <div class="starter-item">
+        <img src="https://www.kitchensanctuary.com/wp-content/uploads/2023/10/Vegetable-Spring-Rolls-wide-FS-and-foodporn.jpg" alt="Vegetarian Starter" class="starter-image">
+        <div class="starter-details">
+            <div class="starter-name">Vegetable Spring Rolls</div>
+            <div class="starter-price">$180.50</div>
+<button class="order-button" onclick="addToOrder('Vegetable Spring Rolls', 180.50)">Order</button>
+        </div>
+    </div>
+
+    <div class="starter-item">
+        <img src="https://t3.ftcdn.net/jpg/02/75/12/02/360_F_275120298_67brtgGKDxjsIRZUEXNvvGiHNXzKvm5s.jpg" alt="Non-Vegetarian Starter" class="starter-image">
+        <div class="starter-details">
+            <div class="starter-name">Chicken Wings</div>
+            <div class="starter-price">$210.50</div>
+<button class="order-button" onclick="addToOrder('Chicken Wings', 210.50)">Order</button>
+        </div>
+    </div>
+
+    <div class="starter-item">
+        <img src="https://www.shutterstock.com/image-photo/cheese-garlic-bread-basket-260nw-1772697533.jpg" alt="Vegetarian Starter" class="starter-image">
+        <div class="starter-details">
+            <div class="starter-name">Cheese Garlic Bread</div>
+            <div class="starter-price">$150.00</div>
+<button class="order-button" onclick="addToOrder('Cheese Garlic Bread', 150.00)">Order</button>
+        </div>
+    </div>
+
+    <div class="starter-item">
+        <img src="https://media.istockphoto.com/id/1408056770/photo/fish-sticks-with-a-cream.jpg?s=612x612&w=0&k=20&c=0DP-r2izsdt1-PopXACXpNwYY0OumZeVN4BkTTY9KXs=" alt="Non-Vegetarian Starter" class="starter-image">
+        <div class="starter-details">
+            <div class="starter-name">Fish Fingers</div>
+            <div class="starter-price">$70.00</div>
+<button class="order-button" onclick="addToOrder('Fish Fingers', 70.50)">Order</button>
+        </div>
+    </div>
+
+ <div class="starter-item">
+        <img src=https://www.indianhealthyrecipes.com/wp-content/uploads/2022/09/garlic-paneer-starter.jpg" alt="Vegetarian Starter" class="starter-image">
+        <div class="starter-details">
+            <div class="starter-name">veg panner</div>
+            <div class="starter-price">$170.00</div>
+<button class="order-button" onclick="addToOrder('veg panner', 170.50)">Order</button>
+        </div>
+    </div>
+
+<ul id="order-list"></ul>
+
+    <div id="order-summary">
+        <button onclick="calculateTotal()">Done</button>
+        <p>Total Items Ordered: <span id="total-items">0</span></p>
+        <p>Total Cost: $<span id="total-cost">0.00</span></p>
+    </div>
+<a href="Desserts.html" class="next-button">Next</a>
+</div>
+<script>
+    const orderedItems = [];
+
+    function addToOrder(item, price) {
+        orderedItems.push({ item, price });
+        const orderList = document.getElementById('order-list');
+        const listItem = document.createElement('li');
+        listItem.textContent = `${item} - $${price.toFixed(2)}`;
+        orderList.appendChild(listItem);
+    }
+
+    function calculateTotal() {
+        const totalItemsSpan = document.getElementById('total-items');
+        const totalCostSpan = document.getElementById('total-cost');
+        const totalItems = orderedItems.length;
+        const totalCost = orderedItems.reduce((acc, item) => acc + item.price, 0).toFixed(2);
+        totalItemsSpan.textContent = totalItems;
+        totalCostSpan.textContent = totalCost;
+    }
+</script>
+
+</body>
+</html>

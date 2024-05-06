@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mocktails & Milkshakes Menu</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 20px;
+  }
+  .menu {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+  h1 {
+    text-align: center;
+    color: #333;
+  }
+  .item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+  }
+  .item img {
+    max-width: 100px;
+    height: auto;
+    border-radius: 8px;
+  }
+  .item-details {
+    flex-grow: 1;
+    margin-left: 20px;
+  }
+  .item-name {
+    font-size: 1.2em;
+    color: #333;
+  }
+  .item-desc {
+    color: #666;
+  }
+  .item-price {
+    font-weight: bold;
+    color: #009688;
+  }
+.order-button {
+            padding: 5px 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .order-button:hover {
+            background-color: #45a049;
+        }
+        #order-list {
+            list-style: none;
+            padding: 0;
+        }
+.end-button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            margin-top: 20px;
+        }
+        .end-button:hover {
+            background-color: #45a049;
+        }
+   
+</style>
+</head>
+<body>
+
+<div class="menu">
+  <h1>Mocktails & Milkshakes Menu</h1>
+ 
+  <div class="item">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKRVlwpTZh2OPiKaFNkAvKLVBoedlpPp4JBcZj-V-hYQ&s" alt="Fruit Punch">
+    <div class="item-details">
+      <div class="item-name">Fruit Punch</div>
+      <div class="item-desc">Refreshing mix of assorted fruits</div>
+      <div class="item-price">$150.00</div>
+<button class="order-button" onclick="addToOrder('Fruit Punch', 150.00)">Order</button>
+    </div>
+  </div>
+
+  <div class="item">
+    <img src="https://c8.alamy.com/comp/2EA4PNW/mojito-or-virgin-mojito-long-rum-drink-with-fresh-mint-lime-juice-cane-sugar-and-soda-2EA4PNW.jpg" alt="Virgin Mojito">
+    <div class="item-details">
+      <div class="item-name">Virgin Mojito</div>
+      <div class="item-desc">Tropical lemon flavor with a hint of lime</div>
+      <div class="item-price">$190.50</div>
+<button class="order-button" onclick="addToOrder('Virgin Mojito', 190.50)">Order</button>
+    </div>
+  </div>
+  <div class="item">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeRSmXprWFwTmzvviTG5OP3ka_qTmeFDr3DxU6VJgeZQ&s" alt="Shirley Temple">
+    <div class="item-details">
+      <div class="item-name">Shirley Temple</div>
+      <div class="item-desc"> hint of strawberry flavor</div>
+      <div class="item-price">$170.50</div>
+<button class="order-button" onclick="addToOrder('Shirley Temple', 190.50)">Order</button>
+    </div>
+  </div>
+  <div class="item">
+    <img src="https://media.istockphoto.com/id/1183223263/photo/homemade-chocolate-cake-milkshake.jpg?s=612x612&w=0&k=20&c=K8rVqy6pa1Hj7D_ksFQw5pY-Th01DnjVpDm6qFYcGbc=" alt="Milkshake">
+    <div class="item-details">
+      <div class="item-name">Chocolate Milkshake</div>
+      <div class="item-desc">Rich chocolate flavor with whipped cream</div>
+      <div class="item-price">$140.50</div>
+<button class="order-button" onclick="addToOrder('Chocolate Milkshake', 190.50)">Order</button>
+    </div>
+  </div>
+
+  <div class="item">
+    <img src="https://www.espressodrive.in/wp-content/uploads/2022/11/Vanilla-Shake-n.jpg" alt="Milkshake">
+    <div class="item-details">
+      <div class="item-name">Vanilla Milkshake</div>
+      <div class="item-desc">Classic vanilla flavor with whipped cream</div>
+      <div class="item-price">$120.50</div>
+<button class="order-button" onclick="addToOrder('Vanilla Milkshake', 190.50)">Order</button>
+    </div>
+  </div>
+  <div class="item">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPXsVy7N9RQMA3ocn5G0VuqgnP0pK_-awdxw0Ls5f0qrHxtSc0YRhHaQVx74_n1oQxMoA&usqp=CAU" alt="Milkshake">
+    <div class="item-details">
+      <div class="item-name">Raspberry Swirl</div>
+      <div class="item-desc">Tropical  Raspberry flavor with a hint of Raspberry</div>
+      <div class="item-price">$210.50</div>
+<button class="order-button" onclick="addToOrder('Raspberry Swirl', 190.50)">Order</button>
+    </div>
+  </div>
+<ul id="order-list"></ul>
+
+    <div id="order-summary">
+        <button onclick="calculateTotal()">Done</button>
+        <p>Total Items Ordered: <span id="total-items">0</span></p>
+        <p>Total Cost: $<span id="total-cost">0.00</span></p>
+    </div>
+</div>
+<script>
+    const orderedItems = [];
+
+    function addToOrder(item, price) {
+        orderedItems.push({ item, price });
+        const orderList = document.getElementById('order-list');
+        const listItem = document.createElement('li');
+        listItem.textContent = `${item} - $${price.toFixed(2)}`;
+        orderList.appendChild(listItem);
+    }
+
+    function calculateTotal() {
+        const totalItemsSpan = document.getElementById('total-items');
+        const totalCostSpan = document.getElementById('total-cost');
+        const totalItems = orderedItems.length;
+        const totalCost = orderedItems.reduce((acc, item) => acc + item.price, 0).toFixed(2);
+        totalItemsSpan.textContent = totalItems;
+        totalCostSpan.textContent = totalCost;
+    }
+</script>
+
+</body>
+</html>

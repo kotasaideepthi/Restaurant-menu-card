@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Course Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        .menu-card {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+        }
+        .food-item {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .food-image {
+            width: 80px;
+            height: 80px;
+            margin-right: 20px;
+        }
+        .food-details {
+            flex-grow: 1;
+        }
+        .food-name {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            margin: 5px 0;
+        }
+        .food-price {
+            font-size: 16px;
+            color: #777;
+            margin: 5px 0;
+        }
+.order-button {
+            padding: 5px 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .order-button:hover {
+            background-color: #45a049;
+        }
+        #order-list {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+        #order-summary {
+            text-align: right;
+        }
+.next-button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            margin-top: 20px;
+        }
+        .next-button:hover {
+            background-color: #45a049;
+        }
+   
+    </style>
+</head>
+<body>
+
+<div class="menu-card">
+    <h1>Main Course Menu</h1>
+    <h2>Non-Veg Biryani's</h2>
+    <div class="food-item">
+        <img src="https://www.shutterstock.com/image-photo/dum-handi-chicken-biryani-prepared-600nw-2000023562.jpg" alt="Chicken" class="food-image">
+        <div class="food-details">
+            <div class="food-name">ChickenBiryani</div>
+            <div class="food-price">$220.0</div>
+<button class="order-button" onclick="addToOrder('ChickenBiryani', 220.00)">Order</button>
+        </div>
+    </div>
+
+    <div class="food-item">
+        <img src="https://assets.zeezest.com/images/PROD_biryani-nonveg_1625152040013.jpg" alt="Mutton" class="food-image">
+        <div class="food-details">
+            <div class="food-name">Mutton Biryani</div>
+            <div class="food-price">$280.00</div>
+<button class="order-button" onclick="addToOrder('Mutton Biryani', 280.00)">Order</button>
+        </div>
+    </div>
+
+    <div class="food-item">
+        <img src="https://www.cubesnjuliennes.com/wp-content/uploads/2020/12/Prawn-Biryani-Recipe.jpg" alt="Prawns" class="food-image">
+        <div class="food-details">
+            <div class="food-name">Prawns Biryani</div>
+            <div class="food-price">$190.00</div>
+<button class="order-button" onclick="addToOrder('Prawns Biryani', 190.00)">Order</button>
+        </div>
+    </div>
+    <h2>Veg Biryani's</h2>
+    <div class="food-item">
+        <img src="https://www.vegrecipesofindia.com/wp-content/uploads/2013/03/veg-pulao.jpg" alt="Veg Paluo" class="food-image">
+        <div class="food-details">
+            <div class="food-name">Veg Paluo</div>
+            <div class="food-price">$110.00</div>
+<button class="order-button" onclick="addToOrder('Veg Paluo', 110.00)">Order</button>
+        </div>
+    </div>
+
+    <div class="food-item">
+        <img src="https://media.istockphoto.com/id/179085494/photo/indian-biryani.jpg?s=612x612&w=0&k=20&c=VJAUfiuavFYB7PXwisvUhLqWFJ20-9m087-czUJp9Fs=" alt="Paneer" class="food-image">
+        <div class="food-details">
+            <div class="food-name">Paneer Biryani</div>
+            <div class="food-price">$130.50</div>
+<button class="order-button" onclick="addToOrder('Paneer Biryani', 130.00)">Order</button>
+        </div>
+    </div>
+
+    <div class="food-item">
+        <img src="https://www.shutterstock.com/image-photo/mushroom-biryani-indian-basmati-rice-260nw-1197573214.jpg" alt="Mushroom" class="food-image">
+        <div class="food-details">
+            <div class="food-name">Mushroom Biryani</div>
+            <div class="food-price">$150.00</div>
+<button class="order-button" onclick="addToOrder('Mushroom Biryani', 150.00)">Order</button>
+        </div>
+    </div>
+<h2>Non-Veg Currys</h2>
+    <div class="food-item">
+        <img src="https://www.shutterstock.com/image-photo/tasty-butter-chicken-curry-dish-600nw-1153329448.jpg" alt="Chiken curry" class="food-image">
+        <div class="food-details">
+            <div class="food-name">Chiken curry</div>
+            <div class="food-price">$140.50</div>
+<button class="order-button" onclick="addToOrder('Chiken curry', 140.50)">Order</button>
+        </div>
+    </div>
+
+<div class="food-item">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyr4bBOVCpH-T12X0dGtxidXYoZCL07dDrz10akSvlwg&s" alt="Fish Curry" class="food-image">
+        <div class="food-details">
+            <div class="food-name">Fish Curry</div>
+            <div class="food-price">$190.50</div>
+<button class="order-button" onclick="addToOrder('Fish Curry', 190.50)">Order</button>
+        </div>
+    </div>
+
+<div class="food-item">
+        <img src="https://c8.alamy.com/comp/BEHFHC/shrimp-or-prawns-fry-south-india-food-BEHFHC.jpg" alt="prawns fry" class="food-image">
+        <div class="food-details">
+            <div class="food-name">prawns fry</div>
+            <div class="food-price">$170.50</div>
+<button class="order-button" onclick="addToOrder('prawns fry', 170.50)">Order</button>
+        </div>
+    </div>
+<h2>Veg currys</h2>
+<div class="food-item">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQnjjSFeBvbz_lqg7UiB7jqr2yg34jQRzVIN6MwTIREA&s" alt="Vegetable Kurma" class="food-image">
+        <div class="food-details">
+            <div class="food-name">Vegetable Kurma</div>
+            <div class="food-price">$110.50</div>
+<button class="order-button" onclick="addToOrder('Vegetable Kurma', 110.50)">Order</button>
+        </div>
+    </div>
+
+<div class="food-item">
+        <img src="https://www.vegrecipesofindia.com/wp-content/uploads/2020/01/paneer-butter-masala-1.jpg" alt="Panner Butter Masala" class="food-image">
+        <div class="food-details">
+            <div class="food-name">Panner Butter Masala</div>
+            <div class="food-price">$150.50</div>
+<button class="order-button" onclick="addToOrder('Panner Butter Masala', 150.50)">Order</button>
+        </div>
+    </div>
+
+<div class="food-item">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvC9jv5aEffMCpvVX0c_X4rTg-8fx79W53sZaYW5KWWg&s" alt="BabyCorn" class="food-image">
+        <div class="food-details">
+            <div class="food-name">BabyCorn</div>
+            <div class="food-price">$140.50</div>
+<button class="order-button" onclick="addToOrder('BabyCorn', 140.50)">Order</button>
+        </div>
+    </div>
+<ul id="order-list"></ul>
+
+    <div id="order-summary">
+        <button onclick="calculateTotal()">Done</button>
+        <p>Total Items Ordered: <span id="total-items">0</span></p>
+        <p>Total Cost: $<span id="total-cost">0.00</span></p>
+    </div>
+<a href="Starters.html" class="next-button">Next</a>
+</div>
+<script>
+    const orderedItems = [];
+
+    function addToOrder(item, price) {
+        orderedItems.push({ item, price });
+        const orderList = document.getElementById('order-list');
+        const listItem = document.createElement('li');
+        listItem.textContent = `${item} - $${price.toFixed(2)}`;
+        orderList.appendChild(listItem);
+    }
+
+    function calculateTotal() {
+        const totalItemsSpan = document.getElementById('total-items');
+        const totalCostSpan = document.getElementById('total-cost');
+        const totalItems = orderedItems.length;
+        const totalCost = orderedItems.reduce((acc, item) => acc + item.price, 0).toFixed(2);
+        totalItemsSpan.textContent = totalItems;
+        totalCostSpan.textContent = totalCost;
+    }
+</script>
+
+</body>
+</html>
