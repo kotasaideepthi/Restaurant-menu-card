@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ice Cream Menu</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 20px;
+  }
+  .menu {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+  h1 {
+    text-align: center;
+    color: #333;
+  }
+  .ice-cream {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+  }
+  .ice-cream img {
+    max-width: 100px;
+    height: auto;
+    border-radius: 8px;
+  }
+  .ice-cream-details {
+    flex-grow: 1;
+    margin-left: 20px;
+  }
+  .ice-cream-name {
+    font-size: 1.2em;
+    color: #333;
+  }
+  .ice-cream-desc {
+    color: #666;
+  }
+  .ice-cream-price {
+    font-weight: bold;
+    color: #009688;
+  }
+.order-button {
+            padding: 5px 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .order-button:hover {
+            background-color: #45a049;
+        }
+        #order-list {
+            list-style: none;
+            padding: 0;
+        }
+.next-button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            margin-top: 20px;
+        }
+        .next-button:hover {
+            background-color: #45a049;
+        }
+   
+</style>
+</head>
+<body>
+
+<div class="menu">
+  <h1>Ice Cream Menu</h1>
+ 
+  <div class="ice-cream">
+    <img src="https://www.shutterstock.com/image-photo/vanilla-ice-cream-sundae-dish-260nw-101482327.jpg" alt="Vanilla Ice Cream">
+    <div class="ice-cream-details">
+      <div class="ice-cream-name">Vanilla</div>
+      <div class="ice-cream-desc">Classic vanilla flavor</div>
+      <div class="ice-cream-price">$120.50</div>
+<button class="order-button" onclick="addToOrder('Vanilla', 120.50)">Order</button>
+    </div>
+  </div>
+
+  <div class="ice-cream">
+    <img src="https://vaya.in/recipes/wp-content/uploads/2018/12/Chocolate-Ice-Cream.jpg" alt="Chocolate Ice Cream">
+    <div class="ice-cream-details">
+      <div class="ice-cream-name">Chocolate</div>
+      <div class="ice-cream-desc">Rich chocolatey goodness</div>
+      <div class="ice-cream-price">$140.50</div>
+<button class="order-button" onclick="addToOrder('Chocolate', 140.50)">Order</button>
+    </div>
+  </div>
+  <div class="ice-cream">
+    <img src="https://t4.ftcdn.net/jpg/07/04/72/81/360_F_704728190_tqYFHbBEPDl8KlFWEbcIaN5xzzP4Ho3G.jpg" alt="Butterscoth Ice Cream">
+    <div class="ice-cream-details">
+      <div class="ice-cream-name">Butterscoth</div>
+      <div class="ice-cream-desc">Tasty butterscoth flavor</div>
+      <div class="ice-cream-price">$130.50</div>
+<button class="order-button" onclick="addToOrder('Butterscoth', 130.50)">Order</button>
+    </div>
+  </div>
+  <div class="ice-cream">g
+    <img src="https://img.freepik.com/premium-photo/3d-illustration-mango-ice-cream-isolated-cup_741212-84.jpg" alt="Mango Ice Cream">
+    <div class="ice-cream-details">
+      <div class="ice-cream-name">Mango</div>
+      <div class="ice-cream-desc">Summer special</div>
+      <div class="ice-cream-price">$160.50</div>
+<button class="order-button" onclick="addToOrder('Mango', 160.50)">Order</button>
+    </div>
+  </div>
+  <div class="ice-cream">
+   
+  <img src="https://5.imimg.com/data5/UC/VA/MY-6168353/pista-ice-cream-500x500.jpg" alt="Pista Ice Cream">
+    <div class="ice-cream-details">
+      <div class="ice-cream-name">Pista</div>
+      <div class="ice-cream-desc">Fruit and Nuts </div>
+      <div class="ice-cream-price">$180.50</div>
+<button class="order-button" onclick="addToOrder('Pista', 180.50)">Order</button>
+    </div>
+  </div>
+
+  <div class="ice-cream">
+    <img src="https://t4.ftcdn.net/jpg/05/93/07/05/360_F_593070598_gscqHV1vMfrCD3yH44yBPfn7JZmHFTcL.jpg" alt="Strawberry Ice Cream">
+    <div class="ice-cream-details">
+      <div class="ice-cream-name">Strawberry</div>
+      <div class="ice-cream-desc">Fresh and fruity strawberry flavor</div>
+      <div class="ice-cream-price">$140.00</div>
+<button class="order-button" onclick="addToOrder('Strawberry', 140.00)">Order</button>
+    </div>
+  </div>
+
+<ul id="order-list"></ul>
+
+    <div id="order-summary">
+        <button onclick="calculateTotal()">Done</button>
+        <p>Total Items Ordered: <span id="total-items">0</span></p>
+        <p>Total Cost: $<span id="total-cost">0.00</span></p>
+    </div>
+ <a href="FastFoods.html" class="next-button">Next</a>
+
+</div>
+<script>
+    const orderedItems = [];
+
+    function addToOrder(item, price) {
+        orderedItems.push({ item, price });
+        const orderList = document.getElementById('order-list');
+        const listItem = document.createElement('li');
+        listItem.textContent = `${item} - $${price.toFixed(2)}`;
+        orderList.appendChild(listItem);
+    }
+
+    function calculateTotal() {
+        const totalItemsSpan = document.getElementById('total-items');
+        const totalCostSpan = document.getElementById('total-cost');
+        const totalItems = orderedItems.length;
+        const totalCost = orderedItems.reduce((acc, item) => acc + item.price, 0).toFixed(2);
+        totalItemsSpan.textContent = totalItems;
+        totalCostSpan.textContent = totalCost;
+    }
+</script>
+
+</body>
+</html>
