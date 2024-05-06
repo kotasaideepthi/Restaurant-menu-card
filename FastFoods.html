@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fast Food Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        .menu-card {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+        }
+        .food-item {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .food-image {
+            width: 80px;
+            height: 80px;
+            margin-right: 20px;
+        }
+        .food-details {
+            flex-grow: 1;
+        }
+        .food-name {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            margin: 5px 0;
+        }
+        .food-price {
+            font-size: 16px;
+            color: #777;
+            margin: 5px 0;
+        }
+.order-button {
+            padding: 5px 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .order-button:hover {
+            background-color: #45a049;
+        }
+        #order-list {
+            list-style: none;
+            padding: 0;
+        }
+.next-button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            margin-top: 20px;
+        }
+        .next-button:hover {
+            background-color: #45a049;
+        }
+   
+    </style>
+</head>
+<body>
+
+<div class="menu-card">
+    <h1>Fast Food Menu</h1>
+    
+    <div class="food-item">
+        <img src="https://www.shutterstock.com/image-photo/burger-260nw-747677671.jpg" alt="Burger" class="food-image">
+        <div class="food-details">
+            <div class="food-name">Cheeseburger</div>
+            <div class="food-price">$140.50</div>
+<button class="order-button" onclick="addToOrder('Cheeseburger', 140.50)">Order</button>
+        </div>
+    </div>
+
+    <div class="food-item">
+        <img src="https://c8.alamy.com/comp/E4G93N/packet-of-french-fries-studio-shot-with-a-white-background-E4G93N.jpg" alt="French Fries" class="food-image">
+        <div class="food-details">
+            <div class="food-name">French Fries</div>
+            <div class="food-price">$120.50</div>
+<button class="order-button" onclick="addToOrder('French Fries', 120.50)">Order</button>
+        </div>
+    </div>
+ <div class="food-item">
+        <img src="https://img.freepik.com/free-photo/sandwich_1339-1109.jpg?size=626&ext=jpg&ga=GA1.1.1224184972.1714003200&semt=ais" alt="Sandwiches" class="food-image">
+        <div class="food-details">
+            <div class="food-name">Sandwiches</div>
+            <div class="food-price">$140.50</div>
+<button class="order-button" onclick="addToOrder('Sandwiches', 140.50)">Order</button>
+        </div>
+    </div>
+
+<div class="food-item">
+        <img src="https://www.shutterstock.com/shutterstock/photos/1738196762/display_1500/stock-photo-small-red-bucket-chicken-fried-white-background-1738196762.jpg" alt="fried chicken" class="food-image">
+        <div class="food-details">
+            <div class="food-name"> fried chicken</div>
+            <div class="food-price">$180.50</div>
+<button class="order-button" onclick="addToOrder('fried chicken', 180.50)">Order</button>
+        </div>
+    </div>
+
+<div class="food-item">
+        <img src="https://media.istockphoto.com/id/1333647378/photo/homemade-american-soft-shell-beef-tacos.jpg?s=612x612&w=0&k=20&c=ZHhpFNbH_BO4MaXzmcKLjC4cPRptdXlp6IVUfs1sBEs=" alt="tacos" class="food-image">
+        <div class="food-details">
+            <div class="food-name"> tacos</div>
+            <div class="food-price">$170.50</div>
+<button class="order-button" onclick="addToOrder('tacos', 170.50)">Order</button>
+        </div>
+    </div>
+
+<div class="food-item">
+        <img src="https://media.istockphoto.com/id/1097098328/photo/small-hot-dogs-on-a-black-tray-with-white-background.jpg?s=612x612&w=0&k=20&c=jhic6gUgzjUgYlm7L9VTX2hVRS4xx8Bl4L7hSDtTpmU=" alt="hot dogs" class="food-image">
+        <div class="food-details">
+            <div class="food-name">hot dogs</div>
+            <div class="food-price">$180.50</div>
+<button class="order-button" onclick="addToOrder('hot dogs', 180.50)">Order</button>
+        </div>
+    </div>
+
+
+    <div class="food-item">
+        <img src="https://img.freepik.com/free-psd/freshly-baked-pizza-with-cut-slice-isolated-transparent-background_191095-9041.jpg?size=338&ext=jpg&ga=GA1.1.1224184972.1714780800&semt=sph" alt="Pizza" class="food-image">
+        <div class="food-details">
+            <div class="food-name">Margherita Pizza</div>
+            <div class="food-price">$150.00</div>
+<button class="order-button" onclick="addToOrder('Margherita Pizza', 150.00)">Order</button>
+        </div>
+    </div>
+
+<ul id="order-list"></ul>
+
+    <div id="order-summary">
+        <button onclick="calculateTotal()">Done</button>
+        <p>Total Items Ordered: <span id="total-items">0</span></p>
+        <p>Total Cost: $<span id="total-cost">0.00</span></p>
+    </div>
+ <a href="MilkShakes&Mocktails.html" class="next-button">Next</a>
+</div>
+<script>
+    const orderedItems = [];
+
+    function addToOrder(item, price) {
+        orderedItems.push({ item, price });
+        const orderList = document.getElementById('order-list');
+        const listItem = document.createElement('li');
+        listItem.textContent = `${item} - $${price.toFixed(2)}`;
+        orderList.appendChild(listItem);
+    }
+
+    function calculateTotal() {
+        const totalItemsSpan = document.getElementById('total-items');
+        const totalCostSpan = document.getElementById('total-cost');
+        const totalItems = orderedItems.length;
+        const totalCost = orderedItems.reduce((acc, item) => acc + item.price, 0).toFixed(2);
+        totalItemsSpan.textContent = totalItems;
+        totalCostSpan.textContent = totalCost;
+    }
+</script>
+
+</body>
+</html>
