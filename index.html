@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Menu</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1 class="restaurant-name">Welcome to Our Restaurant</h1>
+        <section id="menu">
+            <div class="menu-items">
+                <button onclick="location.href='Coffee.html';">Coffees</button>
+                <button onclick="location.href='MainCourse.html';">Main Course</button>
+                <button onclick="location.href='Starters.html';">Starters</button>
+                <button onclick="location.href='Desserts.html';">Desserts</button>
+                <button onclick="location.href='Drinks.html';">Drinks</button>
+                <button onclick="location.href='Ice-Creams.html';">Ice Creams</button>
+                <button onclick="location.href='FastFoods.html';">Fast Foods</button>
+                <button onclick="location.href='MilkShakes&Mocktails.html';">Milkshakes & Mocktails</button>
+                <button onclick="location.href='About.html';">About</button>
+                <button onclick="location.href='Contact.html';">Contact</button>
+            </div>
+        </section>
+    </header>
+    
+    <section id="seating">
+        <h2>Seating</h2>
+        <p>Seats Available: <span id="seats">60</span></p>
+        <button onclick="bookSeat()">Book a Seat</button>
+        <button onclick="cancelSeat()">Cancel Seat</button>
+    </section>
+    
+    <div class="images">
+        <img src="https://www.touchbistro.com/wp-content/uploads/2021/08/restaurant-interior-design-ideas-thumbnail.jpg" alt="Interior" width="400" height="300">
+        <img src="https://www.shutterstock.com/image-illustration/modern-black-gray-cafe-interior-260nw-704969590.jpg" alt="Exterior"width="400" height="300">
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
